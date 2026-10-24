@@ -1,18 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>RYNQZX. — About Me</title>
+  <title>RYNQZX -- About Me</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -26,571 +22,467 @@
     }
 
     body {
-      margin: 0;
       background: #000;
       color: #fff;
-      font-family: "Inter", Arial, sans-serif;
+      font-family: "Inter", sans-serif;
       overflow-x: hidden;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    /* =========================
-       MUSIC
-    ========================= */
-
-    .music-player {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      z-index: 9999;
-
-      display: flex;
-      align-items: center;
-      gap: 9px;
-
-      background: #fff;
-      color: #000;
-
-      padding: 10px 14px;
-
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .04em;
-
-      border: none;
-      cursor: pointer;
-
-      transition: opacity .2s ease;
-    }
-
-    .music-player:hover {
-      opacity: .7;
-    }
-
-    .music-player.hidden {
-      display: none;
-    }
-
-    .music-dot {
-      width: 6px;
-      height: 6px;
-      background: #000;
-      border-radius: 50%;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
-      width: 100%;
+      min-height: 100vh;
       background: #000;
+      padding: 70px 6vw 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .hero-top {
+      flex: 1;
       display: grid;
       grid-template-columns: 57% 43%;
-
-      min-height: 430px;
-
-      padding: 78px 7.5vw 55px;
+      align-items: center;
+      gap: 30px;
     }
 
     .hero-title {
-      font-family: "Archivo Black", Arial, sans-serif;
-
-      font-size: clamp(75px, 9.6vw, 160px);
-
-      line-height: .82;
-
-      letter-spacing: -.075em;
-
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(70px, 11vw, 180px);
+      line-height: 0.86;
+      letter-spacing: -5px;
       text-transform: uppercase;
-
-      color: #f5f5f5;
-
-      max-width: 850px;
     }
 
     .hero-title span {
       display: block;
     }
 
-    .hero-info {
-      max-width: 510px;
-
-      padding-left: 20px;
-      padding-top: 7px;
+    .hero-intro {
+      max-width: 430px;
+      justify-self: end;
+      padding-right: 3vw;
     }
 
-    .hero-description {
-      font-size: clamp(19px, 1.65vw, 28px);
-
-      line-height: 1.35;
-
-      letter-spacing: -.035em;
-
-      font-weight: 400;
-    }
-
-    .hero-description strong {
-      font-weight: 800;
+    .hero-intro p {
+      font-size: clamp(17px, 1.6vw, 24px);
+      line-height: 1.45;
+      color: #d8d8d8;
+      margin-bottom: 30px;
     }
 
     .explore {
-      display: inline-block;
-
-      margin-top: 54px;
-
-      color: #e9c34a;
-
-      font-size: 20px;
-
-      font-weight: 800;
-
-      letter-spacing: -.025em;
-
-      text-decoration: underline;
-
-      text-decoration-thickness: 2px;
-
-      text-underline-offset: 5px;
-
-      transition: opacity .2s ease;
+      color: #f1c84b;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 2px solid #f1c84b;
+      padding-bottom: 5px;
     }
 
     .explore:hover {
-      opacity: .6;
+      opacity: 0.7;
     }
-
-    /* =========================
-       HERO IMAGES
-    ========================= */
 
     .hero-images {
       width: 100%;
-
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 0;
-
-      line-height: 0;
+      gap: 18px;
+      margin-top: 70px;
     }
 
-    .hero-image {
-      width: 100%;
-
-      overflow: hidden;
-
-      background: #111;
-    }
-
-    .hero-image img {
+    .hero-images img {
       width: 100%;
       height: auto;
-
       display: block;
-
       object-fit: contain;
-
-      filter: none;
-
-      transform: none;
+      object-position: center;
     }
 
-    /* =========================
-       ABOUT
-    ========================= */
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 120px 6vw;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(55px, 9vw, 140px);
+      line-height: 0.9;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
 
     .about {
       background: #fff;
       color: #000;
-
-      padding: 120px 7.5vw;
-
-      min-height: 80vh;
-    }
-
-    .label {
-      font-size: 12px;
-
-      font-weight: 800;
-
-      letter-spacing: .08em;
-
-      text-transform: uppercase;
+      min-height: 75vh;
     }
 
     .about-content {
-      display: grid;
-
-      grid-template-columns: 35% 65%;
-
-      gap: 60px;
-
-      margin-top: 75px;
-    }
-
-    .about-title {
-      font-family: "Archivo Black", Arial, sans-serif;
-
-      font-size: clamp(65px, 8vw, 130px);
-
-      line-height: .84;
-
-      letter-spacing: -.07em;
-
-      text-transform: uppercase;
+      max-width: 900px;
+      margin-left: auto;
     }
 
     .about-text {
+      margin-top: 55px;
       max-width: 700px;
-
-      font-size: clamp(20px, 1.8vw, 28px);
-
-      line-height: 1.5;
-
-      letter-spacing: -.035em;
+      font-size: clamp(20px, 2.2vw, 32px);
+      line-height: 1.45;
+      font-weight: 500;
     }
 
-    /* =========================
-       SKILLS
-    ========================= */
+    /* SKILLS */
 
     .skills {
       background: #000;
       color: #fff;
-
-      padding: 120px 7.5vw;
     }
 
-    .skills-title {
-      font-family: "Archivo Black", Arial, sans-serif;
-
-      font-size: clamp(65px, 8vw, 135px);
-
-      line-height: .82;
-
-      letter-spacing: -.07em;
-
-      text-transform: uppercase;
-
-      margin-top: 60px;
-
-      margin-bottom: 80px;
-    }
-
-    .skill-list {
+    .skills-list {
+      margin-top: 70px;
       border-top: 1px solid #333;
     }
 
     .skill {
-      min-height: 90px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
+      padding: 28px 0;
       border-bottom: 1px solid #333;
-
-      font-size: clamp(21px, 2.3vw, 35px);
-
-      letter-spacing: -.04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: clamp(22px, 3vw, 42px);
+      font-weight: 600;
     }
 
     .skill-number {
-      color: #666;
-
-      font-size: 12px;
-
-      letter-spacing: 0;
+      color: #f1c84b;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    /* =========================
-       CONTACT
-    ========================= */
+    /* FAVOURITE ARTISTS */
+
+    .favourite {
+      background: #fff;
+      color: #000;
+    }
+
+    .artist-group + .artist-group {
+      margin-top: 100px;
+      padding-top: 70px;
+      border-top: 1px solid #ccc;
+    }
+
+    .favourite-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 0.85fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .artist-group .favourite-grid {
+      margin-top: 45px;
+    }
+
+    /* GROUP IMAGE */
+
+    .artist-image {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .artist-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .artist-info {
+      margin-top: 18px;
+    }
+
+    .artist-name {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(32px, 3.5vw, 58px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      overflow-wrap: anywhere;
+    }
+
+    .artist-type {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* SONG LIST */
+
+    .songs-heading,
+    .members-heading {
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(22px, 2.5vw, 34px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .songs {
+      border-top: 1px solid #000;
+    }
+
+    .song {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 23px 0;
+      border-bottom: 1px solid #000;
+    }
+
+    .song-info h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .song-info p {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .song-button {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .song-button:hover,
+    .song-button.active {
+      background: #f1c84b;
+      border-color: #f1c84b;
+    }
+
+    /* MEMBERS */
+
+    .members {
+      border-top: 1px solid #000;
+    }
+
+    .member {
+      padding: 21px 0;
+      border-bottom: 1px solid #000;
+    }
+
+    .member h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .member p {
+      font-size: 11px;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    /* CONTACT */
 
     .contact {
       background: #fff;
       color: #000;
-
-      min-height: 75vh;
-
-      padding: 120px 7.5vw 40px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-    }
-
-    .contact-title {
-      font-family: "Archivo Black", Arial, sans-serif;
-
-      font-size: clamp(70px, 9vw, 150px);
-
-      line-height: .82;
-
-      letter-spacing: -.07em;
-
-      text-transform: uppercase;
-
-      margin-top: 70px;
+      min-height: 70vh;
     }
 
     .contact-link {
       display: inline-block;
-
       margin-top: 70px;
-
-      font-size: 20px;
-
-      font-weight: 800;
-
-      text-decoration: underline;
-
-      text-underline-offset: 6px;
-
-      width: fit-content;
+      color: #000;
+      text-decoration: none;
+      font-size: clamp(25px, 4vw, 55px);
+      font-weight: 700;
+      border-bottom: 3px solid #000;
+      padding-bottom: 8px;
+      transition: 0.2s ease;
     }
 
     .contact-link:hover {
-      opacity: .6;
+      color: #b08a00;
+      border-color: #b08a00;
     }
 
-    .footer {
+    /* FOOTER */
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 30px 6vw;
       display: flex;
-
       justify-content: space-between;
-
-      padding-top: 100px;
-
+      align-items: center;
       font-size: 12px;
-
-      color: #777;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
 
-    /* =========================
-       TABLET
-    ========================= */
+    /* TABLET */
 
-    @media (max-width: 900px) {
-
-      .hero-top {
-        grid-template-columns: 1fr .8fr;
-
-        padding: 60px 5vw 45px;
+    @media (max-width: 1050px) {
+      .favourite-grid {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+        gap: 35px;
       }
 
-      .hero-title {
-        font-size: clamp(65px, 10.5vw, 100px);
-      }
-
-      .hero-info {
-        padding-left: 15px;
-      }
-
-      .hero-description {
-        font-size: 19px;
-      }
-
-      .explore {
-        font-size: 17px;
-
-        margin-top: 40px;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr 1.5fr;
+      .members-section {
+        grid-column: 2;
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+      .hero {
+        padding: 45px 5vw 0;
+      }
 
       .hero-top {
-        display: block;
-
-        min-height: auto;
-
-        padding: 42px 24px 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 45px;
       }
 
       .hero-title {
-        font-size: clamp(60px, 17.5vw, 105px);
-
-        line-height: .84;
-
-        letter-spacing: -.075em;
-
-        max-width: 100%;
-
-        overflow: visible;
+        font-size: clamp(62px, 17vw, 110px);
+        letter-spacing: -3px;
       }
 
-      .hero-info {
-        padding: 48px 0 0;
-
+      .hero-intro {
+        padding-right: 0;
         max-width: 100%;
       }
 
-      .hero-description {
-        font-size: 19px;
-
-        line-height: 1.38;
-
-        max-width: 440px;
-      }
-
-      .explore {
-        margin-top: 35px;
-
-        font-size: 17px;
+      .hero-intro p {
+        font-size: 18px;
       }
 
       .hero-images {
         grid-template-columns: 1fr;
-
-        width: 100%;
+        gap: 12px;
+        margin-top: 55px;
       }
 
-      .hero-image {
+      .hero-images img {
         width: 100%;
-      }
-
-      .hero-image img {
-        width: 100%;
-
         height: auto;
-
         object-fit: contain;
       }
 
-      /* ABOUT */
+      section {
+        padding: 80px 5vw;
+      }
 
-      .about {
-        padding: 85px 24px;
+      .section-title {
+        letter-spacing: -2px;
       }
 
       .about-content {
-        display: block;
-
-        margin-top: 50px;
-      }
-
-      .about-title {
-        font-size: 21vw;
-
-        margin-bottom: 50px;
+        margin-left: 0;
       }
 
       .about-text {
-        font-size: 19px;
-
-        line-height: 1.5;
+        margin-top: 40px;
+        font-size: 21px;
       }
 
-      /* SKILLS */
-
-      .skills {
-        padding: 85px 24px;
-      }
-
-      .skills-title {
-        font-size: 21vw;
-
-        margin-top: 50px;
-
-        margin-bottom: 60px;
+      .skills-list {
+        margin-top: 45px;
       }
 
       .skill {
-        min-height: 72px;
-
-        font-size: 20px;
+        padding: 22px 0;
+        font-size: 21px;
       }
 
-      /* CONTACT */
-
-      .contact {
-        min-height: 75vh;
-
-        padding: 85px 24px 30px;
-      }
-
-      .contact-title {
-        font-size: 21vw;
-
+      .favourite-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
         margin-top: 50px;
       }
 
-      .contact-link {
-        margin-top: 55px;
-
-        font-size: 18px;
+      .favourite-grid > div {
+        width: 100%;
       }
 
-      .footer {
-        padding-top: 70px;
-
-        font-size: 11px;
+      .artist-image,
+      .artist-image img {
+        width: 100%;
+        height: auto;
       }
 
-      /* MUSIC */
-
-      .music-player {
-        right: 16px;
-
-        bottom: 16px;
-
-        padding: 9px 12px;
-
-        font-size: 10px;
-      }
-    }
-
-    /* =========================
-       SMALL PHONE
-    ========================= */
-
-    @media (max-width: 380px) {
-
-      .hero-top {
-        padding-left: 20px;
-
-        padding-right: 20px;
+      .artist-image img {
+        object-fit: contain;
       }
 
-      .hero-title {
-        font-size: 17vw;
+      .artist-name {
+        font-size: 48px;
       }
 
-      .hero-description {
+      .songs-heading,
+      .members-heading {
+        font-size: 30px;
+      }
+
+      .song {
+        padding: 22px 0;
+      }
+
+      .song-info h3 {
         font-size: 17px;
       }
 
-      .about,
-      .skills,
-      .contact {
-        padding-left: 20px;
+      .artist-group + .artist-group {
+        margin-top: 70px;
+        padding-top: 45px;
+      }
 
-        padding-right: 20px;
+      .contact-link {
+        margin-top: 50px;
+      }
+
+      footer {
+        padding: 25px 5vw;
+        gap: 20px;
       }
     }
   </style>
@@ -598,314 +490,384 @@
 
 <body>
 
-  <!-- BACKGROUND MUSIC -->
+  <!-- HERO -->
 
-  <audio id="bgMusic" autoplay loop preload="auto">
-    <source
-      src="https://files.catbox.moe/9vp21m.mp3"
-      type="audio/mpeg"
-    >
-  </audio>
-
-  <button
-    class="music-player hidden"
-    id="musicButton"
-    type="button"
-  >
-    <span class="music-dot"></span>
-    PLAY MUSIC
-  </button>
-
-
-  <script>
-
-    const music = document.getElementById("bgMusic");
-
-    const musicButton = document.getElementById("musicButton");
-
-    music.volume = 0.35;
-
-
-    window.addEventListener("load", () => {
-
-      music.play()
-        .then(() => {
-
-          musicButton.classList.add("hidden");
-
-        })
-        .catch(() => {
-
-          musicButton.classList.remove("hidden");
-
-        });
-
-    });
-
-
-    document.addEventListener("click", () => {
-
-      music.play()
-        .then(() => {
-
-          musicButton.classList.add("hidden");
-
-        })
-        .catch(() => {});
-
-    }, { once: true });
-
-
-    musicButton.addEventListener("click", (event) => {
-
-      event.stopPropagation();
-
-      music.play()
-        .then(() => {
-
-          musicButton.classList.add("hidden");
-
-        })
-        .catch(() => {});
-
-    });
-
-  </script>
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
-  <section class="hero">
-
+  <header class="hero">
     <div class="hero-top">
 
       <div class="hero-title">
-
         <span>HI, I'M</span>
-
         <span>RYNQZX.</span>
-
       </div>
 
-
-      <div class="hero-info">
-
-        <p class="hero-description">
-
-          A freelance designer who brings
-          bright ideas to life with
-          <strong>playful, purposeful visuals.</strong>
-
+      <div class="hero-intro">
+        <p>
+          A freelance designer who brings bright ideas to life
+          with playful, purposeful visuals.
         </p>
 
-
-        <a
-          href="#about"
-          class="explore"
-        >
+        <a href="#about" class="explore">
           Explore more about me
         </a>
-
       </div>
 
     </div>
-
-
-    <!-- =========================
-         IMAGES
-    ========================= -->
 
     <div class="hero-images">
-
-      <div class="hero-image">
-
-        <img
-          src="https://files.catbox.moe/p5d8ic.jpg"
-          alt="RYNQZX image 01"
-        >
-
-      </div>
-
-
-      <div class="hero-image">
-
-        <img
-          src="https://files.catbox.moe/vpa7qt.jpg"
-          alt="RYNQZX image 02"
-        >
-
-      </div>
-
+      <img src="https://files.catbox.moe/p5d8ic.jpg" alt="RYNQZX image 1">
+      <img src="https://files.catbox.moe/vpa7qt.jpg" alt="RYNQZX image 2">
     </div>
+  </header>
 
-  </section>
 
+  <!-- ABOUT -->
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section
-    class="about"
-    id="about"
-  >
-
-    <div class="label">
-      01 — ABOUT
-    </div>
-
+  <section class="about" id="about">
+    <div class="section-label">01 -- ABOUT</div>
 
     <div class="about-content">
-
-      <h2 class="about-title">
-
-        ABOUT<br>
-
-        ME.
-
-      </h2>
-
+      <h2 class="section-title">ABOUT ME.</h2>
 
       <p class="about-text">
-
-        I'm RYNQZX, a creative person who enjoys
-        graphic design, visuals and digital projects.
-        I like keeping things simple, clean and
-        expressive while giving every project its
-        own character.
-
+        I'm RYNQZX, a creative person who enjoys graphic design,
+        visuals and digital projects. I like keeping things simple,
+        clean and expressive while giving every project its own character.
       </p>
-
     </div>
-
   </section>
 
 
-  <!-- =========================
-       SKILLS
-  ========================= -->
+  <!-- SKILLS -->
 
   <section class="skills">
+    <div class="section-label">02 -- WHAT I DO</div>
 
-    <div class="label">
-      02 — WHAT I DO
+    <h2 class="section-title">THINGS I CREATE.</h2>
+
+    <div class="skills-list">
+      <div class="skill">
+        <span>Graphic Design</span>
+        <span class="skill-number">01</span>
+      </div>
+
+      <div class="skill">
+        <span>Video Editing</span>
+        <span class="skill-number">02</span>
+      </div>
+
+      <div class="skill">
+        <span>Web Design</span>
+        <span class="skill-number">03</span>
+      </div>
+
+      <div class="skill">
+        <span>Photography</span>
+        <span class="skill-number">04</span>
+      </div>
     </div>
-
-
-    <h2 class="skills-title">
-
-      THINGS<br>
-
-      I CREATE.
-
-    </h2>
-
-
-    <div class="skill-list">
-
-      <div class="skill">
-
-        <span>
-          Graphic Design
-        </span>
-
-        <span class="skill-number">
-          01
-        </span>
-
-      </div>
-
-
-      <div class="skill">
-
-        <span>
-          Video Editing
-        </span>
-
-        <span class="skill-number">
-          02
-        </span>
-
-      </div>
-
-
-      <div class="skill">
-
-        <span>
-          Web Design
-        </span>
-
-        <span class="skill-number">
-          03
-        </span>
-
-      </div>
-
-
-      <div class="skill">
-
-        <span>
-          Photography
-        </span>
-
-        <span class="skill-number">
-          04
-        </span>
-
-      </div>
-
-    </div>
-
   </section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+  <!-- FAVOURITE ARTISTS -->
+
+  <section class="favourite">
+    <div class="section-label">03 -- FAVOURITE ARTISTS</div>
+
+    <!-- NEWJEANS -->
+
+    <div class="artist-group">
+      <div class="favourite-grid">
+
+        <div class="artist-section">
+          <div class="artist-image">
+            <img
+              src="https://files.catbox.moe/97l0om.jpg"
+              alt="NewJeans group photo">
+          </div>
+
+          <div class="artist-info">
+            <h2 class="artist-name">NEWJEANS</h2>
+            <p class="artist-type">Favourite Artist / Group</p>
+          </div>
+        </div>
+
+        <div class="songs-section">
+          <h2 class="songs-heading">FAVOURITE SONGS.</h2>
+
+          <div class="songs">
+            <div class="song">
+              <div class="song-info">
+                <h3>Ditto</h3>
+                <p>NewJeans</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/bkwofr.mp3"
+                aria-label="Play Ditto">▶</button>
+            </div>
+
+            <div class="song">
+              <div class="song-info">
+                <h3>Hurt</h3>
+                <p>NewJeans</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/rwcrql.mp3"
+                aria-label="Play Hurt">▶</button>
+            </div>
+
+            <div class="song">
+              <div class="song-info">
+                <h3>Supernatural</h3>
+                <p>NewJeans</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/vf02n4.mp3"
+                aria-label="Play Supernatural">▶</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="members-section">
+          <h2 class="members-heading">THE MEMBERS.</h2>
+
+          <div class="members">
+            <div class="member">
+              <h3>MINJI</h3>
+              <p>NewJeans Member</p>
+            </div>
+
+            <div class="member">
+              <h3>HANNI</h3>
+              <p>NewJeans Member</p>
+            </div>
+
+            <div class="member">
+              <h3>DANIELLE</h3>
+              <p>NewJeans Member</p>
+            </div>
+
+            <div class="member">
+              <h3>HAERIN</h3>
+              <p>NewJeans Member</p>
+            </div>
+
+            <div class="member">
+              <h3>HYEIN</h3>
+              <p>NewJeans Member</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- HEARTS2HEARTS -->
+
+    <div class="artist-group">
+      <div class="section-label">HEARTS2HEARTS</div>
+
+      <div class="favourite-grid">
+
+        <div class="artist-section">
+          <div class="artist-image">
+            <img
+              src="https://files.catbox.moe/c3e9t1.jpg"
+              alt="Hearts2Hearts group photo">
+          </div>
+
+          <div class="artist-info">
+            <h2 class="artist-name">HEARTS2HEARTS</h2>
+            <p class="artist-type">Favourite Artist / Group</p>
+          </div>
+        </div>
+
+        <div class="songs-section">
+          <h2 class="songs-heading">FAVOURITE SONGS.</h2>
+
+          <div class="songs">
+            <div class="song">
+              <div class="song-info">
+                <h3>Iconic Hearts</h3>
+                <p>Hearts2Hearts</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/jqctmt.m4a"
+                aria-label="Play Iconic Hearts">▶</button>
+            </div>
+
+            <div class="song">
+              <div class="song-info">
+                <h3>Lemon Tang</h3>
+                <p>Hearts2Hearts</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/h2mvic.m4a"
+                aria-label="Play Lemon Tang">▶</button>
+            </div>
+
+            <div class="song">
+              <div class="song-info">
+                <h3>Rude</h3>
+                <p>Hearts2Hearts</p>
+              </div>
+              <button class="song-button"
+                data-song="https://files.catbox.moe/libpt5.m4a"
+                aria-label="Play Rude">▶</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="members-section">
+          <h2 class="members-heading">THE MEMBERS.</h2>
+
+          <div class="members">
+            <div class="member">
+              <h3>CARMEN</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>JIWOO</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>YUHA</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>STELLA</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>JUUN</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>A-NA</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>IAN</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+
+            <div class="member">
+              <h3>YE-ON</h3>
+              <p>Hearts2Hearts Member</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
 
   <section class="contact">
+    <div class="section-label">04 -- CONTACT</div>
 
-    <div class="label">
-      03 — CONTACT
-    </div>
-
-
-    <h2 class="contact-title">
-
-      LET'S<br>
-
-      CREATE.
-
-    </h2>
-
-
-    <!-- WHATSAPP -->
+    <h2 class="section-title">LET'S CREATE.</h2>
 
     <a
-      href="https://wa.me/601130595548"
       class="contact-link"
+      href="https://wa.me/601130595548"
       target="_blank"
-      rel="noopener noreferrer"
-    >
+      rel="noopener noreferrer">
       Get in touch →
     </a>
-
-
-    <div class="footer">
-
-      <span>
-        © 2026 RYNQZX.
-      </span>
-
-      <span>
-        ABOUT ME
-      </span>
-
-    </div>
-
   </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <span>© 2026 RYNQZX.</span>
+    <span>ABOUT ME</span>
+  </footer>
+
+
+  <!-- JAVASCRIPT: SONG PLAYER ONLY -->
+
+  <script>
+    const songButtons = document.querySelectorAll(".song-button");
+
+    let currentAudio = null;
+    let currentButton = null;
+
+    songButtons.forEach(button => {
+      button.addEventListener("click", async () => {
+        const songUrl = button.dataset.song;
+
+        /* Pause or resume the current song */
+
+        if (currentAudio && currentButton === button) {
+          if (currentAudio.paused) {
+            try {
+              await currentAudio.play();
+              button.textContent = "Ⅱ";
+              button.classList.add("active");
+            } catch (error) {
+              button.textContent = "▶";
+            }
+          } else {
+            currentAudio.pause();
+            button.textContent = "▶";
+            button.classList.remove("active");
+          }
+
+          return;
+        }
+
+        /* Stop the previous song */
+
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+
+        if (currentButton) {
+          currentButton.textContent = "▶";
+          currentButton.classList.remove("active");
+        }
+
+        /* Play selected song */
+
+        const audio = new Audio(songUrl);
+        audio.volume = 0.8;
+
+        currentAudio = audio;
+        currentButton = button;
+
+        try {
+          await audio.play();
+          button.textContent = "Ⅱ";
+          button.classList.add("active");
+        } catch (error) {
+          button.textContent = "▶";
+          button.classList.remove("active");
+          currentAudio = null;
+          currentButton = null;
+        }
+
+        audio.addEventListener("ended", () => {
+          if (currentAudio === audio) {
+            button.textContent = "▶";
+            button.classList.remove("active");
+            currentAudio = null;
+            currentButton = null;
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
